@@ -24,19 +24,18 @@ function setup() {
 	world = engine.world;
 
 	paperobject = new Paper ( 200, 100, 20 );
-	//World.add(world,paperobject);
 	
-	dustbin1 = Bodies.rectangle(425,655,150,15 ,{isStatic: true} );
-	World.add(world, dustbin1);
+	
+	dustbin1 = new Bin(425,655,150,15  );
+	
 
-	dustbin1 = Bodies.rectangle( 495,625,15,70,{isStatic: true} );
-	World.add(world, dustbin1);
+	dustbin2 = new Bin( 495,625,15,70 );
+	
 
 	
-	ground = Bodies.rectangle(100, 250, 250, 10 ,{isStatic: true} );
-	World.add(world, ground);
-	ground1 = Bodies.rectangle(width/2, 650, width, 10 ,{isStatic: true} );
-	World.add(world, ground1);
+	ground1 = new Ground (125, 200, 250);
+	
+	ground2 = new Ground(350, 650, 700);
 
 	Engine.run(engine);
   
@@ -48,7 +47,13 @@ function draw() {
   background("grey");
   
   paperobject.display();
+
+  ground1.display();
+
+  ground2.display();
+
   keypressed();
+
   drawSprites();
  
 }

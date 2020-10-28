@@ -15,6 +15,10 @@ class Paper{
         
 
     }
+   
+        
+       
+    
     display(){
          
         var paperpos = this.body.position;
